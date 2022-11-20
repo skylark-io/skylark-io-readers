@@ -1,11 +1,11 @@
 define([
     "./readers",
     './uint8-array-reader'
-], function (readers,Reader) {
+], function (readers,Uint8ArrayReader) {
     'use strict';
 
 
-    var BufferReader = ArrayReader.inherit({
+    var BufferReader = Uint8ArrayReader.inherit({
         klassName: "BufferReader",
 
         readData : function (size) {

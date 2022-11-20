@@ -1,7 +1,8 @@
 define([
     "skylark-langx-events",
+    "skylark-langx-binary/transform",
     "./readers"
-], function(events,readers) {
+], function(events,transform,readers) {
 
     'use strict';
 
@@ -41,7 +42,7 @@ define([
             return result;
         },
         readString: function (size) {
-            return utils.transformTo('string', this.readData(size));
+            return transform('string', this.readData(size));
         },
         readData: function () {
         },

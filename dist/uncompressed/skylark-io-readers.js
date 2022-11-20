@@ -95,8 +95,9 @@ define('skylark-io-readers/readers',[
 
 define('skylark-io-readers/_reader',[
     "skylark-langx-events",
+    "skylark-langx-binary/transform",
     "./readers"
-], function(events,readers) {
+], function(events,transform,readers) {
 
     'use strict';
 
@@ -136,7 +137,7 @@ define('skylark-io-readers/_reader',[
             return result;
         },
         readString: function (size) {
-            return utils.transformTo('string', this.readData(size));
+            return transform('string', this.readData(size));
         },
         readData: function () {
         },
@@ -228,11 +229,11 @@ define('skylark-io-readers/uint8-array-reader',[
 define('skylark-io-readers/buffer-reader',[
     "./readers",
     './uint8-array-reader'
-], function (readers,Reader) {
+], function (readers,Uint8ArrayReader) {
     'use strict';
 
 
-    var BufferReader = ArrayReader.inherit({
+    var BufferReader = Uint8ArrayReader.inherit({
         klassName: "BufferReader",
 
         readData : function (size) {
