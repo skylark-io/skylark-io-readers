@@ -1,0 +1,1 @@
+{"version":3,"sources":["readers.js"],"names":["define","skylark","attach"],"mappings":";;;;;;;AAAAA,QACI,oBACD,SAASC,GAER,OAAOA,EAAQC,OAAO","file":"../readers.js","sourcesContent":["define([\r\n    \"skylark-langx-ns\"\r\n], function(skylark) {\r\n\r\n    return skylark.attach(\"io.readers\");\r\n});\r\n"]}
